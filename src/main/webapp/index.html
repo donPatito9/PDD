@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+        xmlns:p="http://primefaces.org/ui"
+        xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+
+    <h:head><h1>Wenaaaaa</h1></h:head>
+<body>
+	<h:form>
+		<p:commandButton value="Seleccionar MYSQL" actionListener="#{usuarioController.seleccionar('MYSQL')}" update="dt"/>
+                <p:commandButton value="Seleccionar POSTGRESQL" actionListener="#{usuarioController.seleccionar('POSTGRESQL')}" update="dt"/>
+		<p:commandButton value="Seleccionar ORACLE" actionListener="#{usuarioController.seleccionar('ORACLE')}" update="dt"/>
+	        <p:commandButton value="Seleccionar SQLSERVER" actionListener="#{usuarioController.seleccionar('SQLSERVER')}" update="dt"/>
+		<p:dataTable id="dt" value="#{usuarioController.lista}" var="u">
+                    
+			<p:column headerText="ID">
+				<p:outputLabel value="#{u.id}"/>
+			</p:column>
+
+			<p:column headerText="Nombre">
+				<p:outputLabel value="#{u.nombre}"/>
+			</p:column>
+
+			<p:column headerText="Apellido">
+				<p:outputLabel value="#{u.apellido}"/>
+			</p:column>
+                    
+			<p:column headerText="Edad">
+				<p:outputLabel value="#{u.edad}"/>
+			</p:column>
+
+			<p:column headerText="Contribucion">
+				<p:outputLabel value="#{u.contribucion}"/>
+			</p:column>
+                    
+			<p:column headerText="Pension">
+				<p:outputLabel value="#{u.pension}"/>
+			</p:column>
+
+			<p:column headerText="Afp">
+				<p:outputLabel value="#{u.afp}"/>
+			</p:column>
+		</p:dataTable>
+	</h:form>
+</body>
+</html>
+
+
+
